@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Starting seed"
+
+puts "Adding one office"
+
+Office.create!(name: "Omniturm", description: "Amazing place", address: "Berlin", price: 50, availability_description: "Open during Q1", table_num: "many", wifi: true, amenities: true, user_id: 1 )
+
+puts "Seed done"

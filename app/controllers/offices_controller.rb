@@ -6,6 +6,7 @@ class OfficesController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -42,6 +43,6 @@ class OfficesController < ApplicationController
   end
 
   def find
-    Office.find(office_params[:id])
+    @office = Office.find(params[:id])
   end
 end

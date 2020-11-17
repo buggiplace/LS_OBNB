@@ -1,9 +1,10 @@
 class BookingsController < ApplicationController
     before_action :find_booking, only: [:show, :destroy, :update, :edit]
+
     def index
         @bookings = Bookings.all
-    end   
-    
+    end
+
     def show
     end
 
@@ -25,7 +26,7 @@ class BookingsController < ApplicationController
 
     def edit
     end
-  
+
     def update
       @booking.update(booking_params)
       redirect_to booking_path(@booking.id), notice: 'Booking was successfully updated.'
@@ -43,6 +44,6 @@ class BookingsController < ApplicationController
     def booking_params
         params.require(@booking).permit(:office_id, :user_id, :booking_start, :booking_end)
     end
-    
+
 end
 

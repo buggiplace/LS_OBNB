@@ -1,8 +1,7 @@
 
-  <div class="mb-5 text-decoration-none">
-      <% @offices.each do |off| %>
-        <%= link_to office_path(off) %>
-          <%= off.name %>
-        <% end %>
-  </div>
+<div class="mb-5 text-decoration-none">
+  <% @offices.each do |off| %>
+    <%= link_to off.name, office_path(off) %>
+  <% end %>
+</div>
 

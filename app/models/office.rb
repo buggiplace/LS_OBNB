@@ -9,4 +9,6 @@ class Office < ApplicationRecord
   validates :amenities, presence: true, allow_blank: false
 
   belongs_to :user
+
+  has_many :bookings
 end

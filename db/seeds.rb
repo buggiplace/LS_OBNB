@@ -27,22 +27,23 @@ puts "Adding 20 offices"
     availability_description: "placehold_availabilty_description",
     table_num: "placehold_table_num",
     amenities: Faker::Boolean,
-    user_id: Faker::Number.within(range: 1..5),
+    user_id: User.all.sample.id
   )
 end
+
 puts "Office Seed done"
 
 
 puts "Adding 10 bookings"
 
-# 10.times do
-#   Booking.create!(
-#     user_id: User.all.sample.id,
-#     office_id: Office.all.sample.id,
-#     booking_start: Date.today,
-#     booking_end: Date.today + 5
-#   )
-# end
+10.times do
+  Booking.create!(
+    user_id: User.all.sample.id,
+    office_id: Office.all.sample.id,
+    booking_start: Date.today,
+    booking_end: Date.today + 5
+  )
+end
 
 puts "Booking Seed done"
 

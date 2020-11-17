@@ -18,7 +18,7 @@ class BookingsController < ApplicationController
         @booking = Booking.new(booking_params)
         @booking.office = @office
         if @booking.save!
-          redirect_to office_path(@office), notice: ‘Booking was successfully created.’
+          redirect_to office_path(@office), notice: "Booking was successfully created."
         else
           render :new
         end

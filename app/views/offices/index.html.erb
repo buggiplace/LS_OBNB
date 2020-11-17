@@ -1,20 +1,31 @@
-<% if policy(Office).create? %>
-      <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-success'%>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+  <div class="banner-content pt-2 pl-3 pb-2">
+    <h1>Choose an amazing workplace nearby</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container d-flex justify-content-center mt-5">
+  <% if policy(Office).create? %>
+        <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main'%>
+  <% end %>
+</div>
+
 <div class="container cards-grid mt-5">
 <div class="cards mb-5">
 <% @offices.each do |off| %>
 <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <img src='https://picsum.photos/580/230?random=#{<%=off.id%>}' />
   <div class="card-trip-infos">
     <div>
       <h2><%= link_to off.name, office_path(off) %></h2>
-      <p><%= off.description %> Location: <%= off.address %></p>
+      <p>Location: <%= off.address %></p>
     </div>
     <h2 class="card-trip-pricing"><%= off.price %> €</h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+    <img src="https://i.pravatar.cc/101" class="card-trip-user avatar-bordered" />
   </div>
 </div>
 <% end %>
 </div>
 </div>
+

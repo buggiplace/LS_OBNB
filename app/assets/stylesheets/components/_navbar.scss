@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  z-index: 20;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,25 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+// bootstrap classes adjust
+.nav-link:hover {
+  color: #E1195F !important;
+}
+
+.dropdown-item:hover {
+ color: #E1195F !important;
+}
+
+// #navbar-dropdown {
+//   .avatar:hover {
+//     border: #E1195F 1px solid !important;
+//   }
+// }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }

@@ -1,1 +1,78 @@
 // Specific CSS for your home-page
+
+.logo-home{
+  width: 13vw;
+}
+
+
+.icons{
+  width: 11vw;
+  height: 10vh;
+}
+
+.icons-text{
+  text-align: center;
+  font-weight: lighter;
+}
+
+.icons-text:hover{
+  color: #E1195F;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+// p {
+//   font-size: 20px;
+// }
+
+.semi-header {
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+
+  // border-radius: 10px;
+  width: 100%;
+  background: rgba(225, 25, 95, 0.4);
+  transition-duration: 0.1s;
+}
+
+.semi-header:hover{
+  background: rgba(225, 25, 95, 0.8);
+  transition: 500ms;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .logo-home{
+    width: 23vw;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .logo-home{
+    width: 20vw;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .logo-home{
+    width: 18vw;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .logo-home{
+    width: 15vw;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .logo-home{
+    width: 13vw;
+  }
+}

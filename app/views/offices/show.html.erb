@@ -26,6 +26,23 @@
   </div>
 </div>
 
+
+<div class="container">
+  <%= simple_form_for([@office, @booking]) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+    <div class="form-inputs">
+      <%= f.input :booking_start %>
+      <%= f.input :booking_end %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>
+
+
+
 <br>
 <div class="d-flex justify-content-center">
     <%= link_to 'Back to overview', offices_path, class: 'btn btn-secondary btn-lg btn-block'%>

@@ -31,3 +31,6 @@
     <%= link_to 'Back to overview', offices_path, class: 'btn btn-secondary btn-lg btn-block'%>
 </div>
 
+<% if policy(@office).edit? %>
+    <%= link_to "Update", edit_office_path(@office) %>
+  <% end %>

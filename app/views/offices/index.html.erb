@@ -1,8 +1,10 @@
 
   <div class="mb-5 text-decoration-none">
       <% @offices.each do |off| %>
-        <%= link_to office_path(off) %>
-          <%= off.name %>
+        <a href="<%="/offices/#{off.id}" %>"><%= off.id %> <%= off.name %> <%= off.address %> <%= off.price %> <%= off.availability_description  %> <%= off.table_num %> <%= off.wifi  %> <%= off.amenities %> </a>
         <% end %>
   </div>
+
+
+
 

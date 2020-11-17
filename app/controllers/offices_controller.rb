@@ -6,34 +6,43 @@ class OfficesController < ApplicationController
   end
 
   def show
+    authorize @office
     @booking = Booking.new
   end
 
   def new
     @office = Office.new
+    authorize @office
   end
 
   def create
     @office = Office.new(office_params)
+    authorize @office
     @office.user = current_user # given to every controller by devise (does not need to be declared)
     if @office.save
-      redirect_to office_path(@office)
+      redirect_to office_path(@office), notice: 'Office was successfully created.'
     else
       render :new
     end
   end
 
   def edit
+    authorize @office
   end
 
   def update
-    @office.update(office_params)
+    authorize @office
+    if @office.update(office_params)
     redirect_to office_path(@office.id), notice: 'Office was successfully updated.'
+    else
+    render :edit
+    end
   end
 
   def destroy
+    authorize @office
     @office.destroy
-    redirect_to office_path
+    redirect_to office_path, notice: 'Office was successfully destroyed.'
   end
 
   private

@@ -2,10 +2,17 @@
   <div class="container">
     <h1>Office BNB brings amazing workplaces to people with ideas and passion!</h1>
     <p>Start looking for a perfect desk to rent in your area now.</p>
-    <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-success'%>
+    <% if policy(Office).create? %>
+      <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-success'%>
+    <% end %>
     <%= link_to 'Show all offices', offices_path, class: 'btn btn btn-primary'%>
   </div>
 </div>
 
 <h1>CTA</h1>
 <h1>PLACEHOLD CARDS GRID</h1>
+
+
+
+
+

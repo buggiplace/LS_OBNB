@@ -7,6 +7,7 @@ class OfficesController < ApplicationController
 
   def show
     authorize @office
+    @booking = Booking.new
   end
 
   def new

@@ -10,6 +10,25 @@ puts "Starting seed"
 
 puts "Adding one office"
 
+#comment the following line out in case of activating the loop below
 Office.create!(name: "Omniturm", description: "Amazing place", address: "Berlin", price: 50, availability_description: "Open during Q1", table_num: "many", wifi: true, amenities: true, user_id: 1 )
+
+# add user id in case of activating !!!
+
+# puts "Adding 20 offices"
+# 20.times do
+#   Office.create!(
+#     name: Faker::Restaurant.name,
+#     description: "placehold_description",
+#     address: Faker::Address.full_address
+#     price: Faker::Number.within(range: 1..10),
+#     wifi: Faker::Boolean,
+#     availability_description: "placehold_availabilty_description",
+#     table_num: "placehold_table_num",
+#     amenities: Faker::Boolean,
+#     user_id: #what needs to be here???
+#   )
+# end
+
 
 puts "Seed done"

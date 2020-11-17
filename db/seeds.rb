@@ -1,18 +1,9 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "Starting seed"
 
+puts "Cleaning old seeds"
 
-#comment the following line out in case of activating the loop below
-# Office.create!(name: "Omniturm", description: "Amazing place", address: "Berlin", price: 50, availability_description: "Open during Q1", table_num: "many", wifi: true, amenities: true, user_id: 1 )
-
-# add user id in case of activating !!!
+Office.destroy_all
+User.destroy_all
 
 puts "Adding 20 users"
 
@@ -42,7 +33,18 @@ end
 puts "Office Seed done"
 
 
+puts "Adding 10 bookings"
 
+# 10.times do
+#   Booking.create!(
+#     user_id: User.all.sample.id,
+#     office_id: Office.all.sample.id,
+#     booking_start: Date.today,
+#     booking_end: Date.today + 5
+#   )
+# end
+
+puts "Booking Seed done"
 
 
 

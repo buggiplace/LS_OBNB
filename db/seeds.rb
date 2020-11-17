@@ -14,6 +14,7 @@ puts "Adding 20 users"
   )
 end
 
+
 puts "User Seed done"
 
 puts "Adding 20 offices"
@@ -34,18 +35,19 @@ end
 puts "Office Seed done"
 
 
-puts "Adding 10 bookings"
+# uncomment when user model exists
+# puts "Adding 10 bookings"
 
-10.times do
-  Booking.create!(
-    user_id: User.all.sample.id,
-    office_id: Office.all.sample.id,
-    booking_start: Date.today,
-    booking_end: Date.today + 5
-  )
-end
+# 10.times do
+#   Booking.create!(
+#     user_id: User.all.sample.id,
+#     office_id: Office.all.sample.id,
+#     booking_start: Date.today,
+#     booking_end: Date.today + 5
+#   )
+# end
 
-puts "Booking Seed done"
+# puts "Booking Seed done"
 
 
 

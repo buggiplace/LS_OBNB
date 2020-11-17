@@ -1,10 +1,20 @@
 
-  <div class="mb-5 text-decoration-none">
-      <% @offices.each do |off| %>
-        <a href="<%="/offices/#{off.id}" %>"><%= off.id %> <%= off.name %> <%= off.address %> <%= off.price %> <%= off.availability_description  %> <%= off.table_num %> <%= off.wifi  %> <%= off.amenities %> </a>
-        <% end %>
+<div class="container cards-grid mt-5">
+<div class="cards mb-5">
+<% @offices.each do |off| %>
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= off.name %></h2>
+      <p><%= off.description %> Location: <%= off.address %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= off.price %> €</h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
-
-
+</div>
+<% end %>
+</div>
+</div>
 
 

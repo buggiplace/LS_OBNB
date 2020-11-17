@@ -1,4 +1,3 @@
-
 <div class="container cards-grid mt-5">
 <div class="cards mb-5">
 <% @offices.each do |off| %>
@@ -6,7 +5,7 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2><a href="<%="/offices/#{off.id}" %>"><%= off.name %> </a></h2>
+      <h2><%= link_to off.name, office_path(off) %></h2>
       <p><%= off.description %> Location: <%= off.address %></p>
     </div>
     <h2 class="card-trip-pricing"><%= off.price %> €</h2>
@@ -16,6 +15,3 @@
 <% end %>
 </div>
 </div>
-
-
-

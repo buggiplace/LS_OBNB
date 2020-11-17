@@ -6,7 +6,7 @@
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
     <div>
-      <h2><%= off.name %></h2>
+      <h2><a href="<%="/offices/#{off.id}" %>"><%= off.name %> </a></h2>
       <p><%= off.description %> Location: <%= off.address %></p>
     </div>
     <h2 class="card-trip-pricing"><%= off.price %> €</h2>
@@ -16,5 +16,6 @@
 <% end %>
 </div>
 </div>
+
 
 

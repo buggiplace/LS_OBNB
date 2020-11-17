@@ -1,3 +1,6 @@
+<% if policy(Office).create? %>
+      <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-success'%>
+<% end %>
 <div class="container cards-grid mt-5">
 <div class="cards mb-5">
 <% @offices.each do |off| %>

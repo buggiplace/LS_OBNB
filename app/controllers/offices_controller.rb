@@ -1,12 +1,11 @@
 class OfficesController < ApplicationController
-  before_action :find, only: [:show, :edit, :update, :destroy]
+  before_action :find, only: %i[show edit update destroy]
 
   def index
     @offices = Office.all
   end
 
   def show
-
   end
 
   def new

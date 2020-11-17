@@ -15,8 +15,8 @@ class OfficesController < ApplicationController
 
   def create
     @office = Office.new(office_params)
-
-    if office.save
+    @office.user = current_user # given to every controller by devise (does not need to be declared)
+    if @office.save
       redirect_to office_path(@office)
     else
       render :new

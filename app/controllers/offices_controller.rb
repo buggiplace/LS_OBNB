@@ -1,4 +1,6 @@
 class OfficesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   before_action :find, only: %i[show edit update destroy]
 
   def index

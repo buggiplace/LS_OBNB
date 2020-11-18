@@ -48,7 +48,7 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:name, :description, :address, :price, :availability_description, :table_num, :wifi, :amenities)
+    params.require(:office).permit(:name, :description, :address, :price, :availability_description, :table_num, :wifi, :amenities, :photo)
   end
 
   def find

@@ -5,6 +5,12 @@ class OfficesController < ApplicationController
 
   def index
     @offices = Office.all
+    @markers = @offices.geocoded.map do |office|
+      {
+        lat: office.latitude,
+        lng: office.longitude
+      }
+    end
   end
 
   def show

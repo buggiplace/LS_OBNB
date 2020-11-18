@@ -2,6 +2,7 @@ puts "Starting seed"
 
 puts "Cleaning old seeds"
 
+Booking.destroy_all
 Office.destroy_all
 User.destroy_all
 

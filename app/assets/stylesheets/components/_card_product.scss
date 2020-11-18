@@ -5,6 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  width: 75%;
 }
 
 .card-product img {
@@ -25,6 +26,7 @@
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
+  font-weight: lighter;
 }
 
 .card-product .card-product-infos {

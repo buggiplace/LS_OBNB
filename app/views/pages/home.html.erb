@@ -1,18 +1,67 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1510074377623-8cf13fb86c08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80');">
-  <div class="container">
+  <div class=" d-flex justify-content-center mb-2">
+  <%= image_tag "obnb_logo_06.png", class: "logo-home banner-content" %>
+  </div>
+  <div class="banner-content pt-3 pl-3">
     <h1>Office BNB brings amazing workplaces to people with ideas and passion!</h1>
     <p>Start looking for a perfect desk to rent in your area now.</p>
+    <div class="d-flex justify-content-around pb-3">
     <% if policy(Office).create? %>
-      <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-success'%>
+      <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main'%>
     <% end %>
-    <%= link_to 'Show all offices', offices_path, class: 'btn btn btn-primary'%>
+      <%= link_to 'Show all offices', offices_path, class: 'btn btn btn-obnb-secondary'%>
+    </div>
   </div>
 </div>
 
-<h1>CTA</h1>
-<h1>PLACEHOLD CARDS GRID</h1>
+<div class="d-flex flex-row justify-content-around mt-5 mb-5">
+    <div class="d-flex flex-column justify-content-center">
+      <div>
+        <%= image_tag "network.svg", class: 'icons  p-2' %>
+      </div>
+      <div class="icons-text">
+        <p>speed</p>
+      </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center">
+      <div>
+        <%= image_tag "globe.svg", class: 'icons d-inline-flex p-2' %>
+      </div>
+      <div class="icons-text">
+        <p>worldwide</p>
+      </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center">
+      <div>
+        <%= image_tag "money.svg", class: 'icons d-inline-flex p-2' %>
+      </div>
+      <div class="icons-text">
+        <p>value</p>
+      </div>
+    </div>
+</div>
 
+<div class="semi-header pt-2 pb-2 mb-2 d-flex justify-content-center">
+<h1>Check out our amazing office-worlds</h1>
+</div>
+<div class="cards mb-5">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1462899006636-339e08d1844e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+    Skyline-Views
+  </div>
 
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1527192491265-7e15c55b1ed2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+    Co-Working
+  </div>
 
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1461749280684-dccba630e2f6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+    Tech-related
+  </div>
 
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1582281171754-405cb2a75fb1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80)">
+    Budget
+  </div>
+</div>
 
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1518688248740-7c31f1a945c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
+  Win a free day in a selected office in your city
+</div>

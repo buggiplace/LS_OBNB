@@ -39,7 +39,7 @@ class BookingsController < ApplicationController
   def destroy
     authorize @booking
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to bookings_path, notice: 'Booking was successfully destroyed.'
   end
 
   private

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources(:bookings, {only: [:create, :show]})
   end
   resources(:bookings, {only: [:index]})
+  get "myobnb", to: 'users#host_index'
 end
 
 

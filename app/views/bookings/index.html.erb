@@ -8,8 +8,11 @@
       <h2><%= booking.office.name %></h2>
       <p>Start Date: <%= booking.booking_start%></p>
       <p>End Date: <%= booking.booking_end%></p>
-      <%= link_to "Delete", booking_path(booking), method: "delete", data: { confirm: "Are you sure?" } %>
-    </div>
+      
+      <% if policy(booking).destroy? %>      
+       <%= link_to "Delete", booking_path(booking), method: "delete", data: { confirm: "Are you sure?" } %>
+      <% end %>
+      </div>
   </div>
   <% end %>
 

@@ -35,9 +35,9 @@ class OfficesController < ApplicationController
   def update
     authorize @office
     if @office.update(office_params)
-    redirect_to office_path(@office.id), notice: 'Office was successfully updated.'
+      redirect_to office_path(@office.id), notice: 'Office was successfully updated.'
     else
-    render :edit
+      render :edit
     end
   end
 

@@ -19,7 +19,8 @@ class BookingsController < ApplicationController
     authorize @booking
     if @booking.save!
       #change redirect to overview page of my bookings later, when it exists
-      redirect_to office_path(@office), notice: "Booking was successfully created."
+      redirect_to myobnb_path, notice: "Booking was successfully created."
+      # redirect_to office_path(@office), notice: "Booking was successfully created."
     else
       render :new
     end

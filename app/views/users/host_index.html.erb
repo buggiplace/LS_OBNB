@@ -33,9 +33,12 @@
 
 <br>
 
+<div class="ml-4">
 <h1>MY PERSONAL CUSTOMER BOOKINGS </h1>
 <% current_user.bookings.each do |booking| %>
-  <%= booking.booking_start  %>
+  ID <%= booking.id  %>
+  Booking start <%= booking.booking_start  %>
+  Booking end <%= booking.booking_end  %>
 <% end %>
-
+</div>
 

@@ -1,0 +1,41 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+  <div class="banner-content pt-2 pl-3 pb-2">
+    <h1>My OBNB</h1>
+    </div>
+  </div>
+</div>
+
+<h1>THIS IS AN AMAZING FEATURE THAT SHOWS PERSONALIZED BOOKINGS FOR CUSTOMERS</h1>
+
+<h1>MY OFFICES' BOOKINGS</h1>
+
+
+
+
+<% @offices.each do |office| %>
+<div class="container mt-5 d-flex flex-column align-items-center flex-grow">
+  <div class="card-product-myobnb mb-4">
+
+    <div class="card-product-infos">
+      <h2><%= office.name %></h2>
+      <p><strong>Office name:</strong> <%= office.name %></p>
+      <% office.bookings.each do |booking| %>
+      <p><strong>Booking ID:</strong><%= booking.id %></p>
+      <p><strong>Booking Start:</strong><%= booking.booking_start %></p>
+      <p><strong>Booking End:</strong><%= booking.booking_end %></p>
+      <% end  %>
+    </div>
+  </div>
+</div>
+<% end %>
+
+
+
+<br>
+
+<h1>MY PERSONAL CUSTOMER BOOKINGS </h1>
+<% current_user.bookings.each do |booking| %>
+  <%= booking.booking_start  %>
+<% end %>
+
+

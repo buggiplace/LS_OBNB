@@ -18,7 +18,9 @@ class OfficePolicy < ApplicationPolicy
     return true
   end
 
-
+   def host_index?
+    return true
+  end
 
   def update?
     record.user == user

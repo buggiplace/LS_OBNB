@@ -15,7 +15,11 @@
 <div class="cards mb-5">
 <% @offices.each do |off| %>
 <div class="card-trip">
-  <img src='https://picsum.photos/580/230?random=#{<%=off.id%>}' />
+<% if off.photo.attached? %>
+  <%= cl_image_tag off.photo.key %>
+<% else %>
+  <img src="https://res.cloudinary.com/dvoduvlcz/image/upload/v1605699486/office5_uybgde.jpg" alt="office">
+<% end %>
   <div class="card-trip-infos">
     <div>
       <h2><%= link_to off.name, office_path(off) %></h2>

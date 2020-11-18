@@ -1,4 +1,6 @@
 class OfficesController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
+
   before_action :find, only: %i[show edit update destroy]
 
   def index
@@ -48,7 +50,7 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:name, :description, :address, :price, :availability_description, :table_num, :wifi, :amenities)
+    params.require(:office).permit(:name, :description, :address, :price, :availability_description, :table_num, :wifi, :amenities, :photo)
   end
 
   def find

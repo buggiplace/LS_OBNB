@@ -6,6 +6,7 @@ class BookingsController < ApplicationController
   end
 
   def show
+    authorize @booking
   end
 
   def create
@@ -13,6 +14,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.office = @office
     @booking.user = current_user
+    authorize @booking
     if @booking.save!
       #change redirect to overview page of my bookings later, when it exists
       redirect_to office_path(@office), notice: "Booking was successfully created."
@@ -22,14 +24,17 @@ class BookingsController < ApplicationController
   end
 
   def edit
+    authorize @booking
   end
 
   def update
+    authorize @booking
     @booking.update(booking_params)
     redirect_to booking_path(@booking.id), notice: 'Booking was successfully updated.'
   end
 
   def destroy
+    authorize @booking
     @booking.destroy
     redirect_to booking_path
   end

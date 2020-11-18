@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :offices do
     resources(:bookings, {only: [:create, :show]})
   end
-  resources(:bookings, {only: [:index]})
+  resources(:bookings, {only: [:index, :destroy]})
 end
 
 

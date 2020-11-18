@@ -1,8 +1,8 @@
 class BookingPolicy < ApplicationPolicy
- class Scope < Scope
-  def resolve
-    scope.all
-  end
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
   end
 
   def show?
@@ -17,8 +17,6 @@ class BookingPolicy < ApplicationPolicy
     return true
   end
 
-
-
   def update?
     record.user == user
     # - record: the restaurant passed to the `authorize` method in controller
@@ -26,6 +24,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user
+    record.user == user && record.booking_start.future?
   end
 end

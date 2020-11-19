@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save!
+      UserMailer.with(booking: @booking).newbooking.deliver_now
       #change redirect to overview page of my bookings later, when it exists
       redirect_to myobnb_path, notice: "Booking was successfully created."
       # redirect_to office_path(@office), notice: "Booking was successfully created."

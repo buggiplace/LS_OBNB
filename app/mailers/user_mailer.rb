@@ -6,7 +6,7 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.newbooking.subject
   #
   def newbooking
-    @greeting = "Hi" #similar to a instance variable in a controller
+    @greeting = "Hello love" #similar to a instance variable in a controller
     @booking = params[:booking]
     mail to: "to@example.org"
   end

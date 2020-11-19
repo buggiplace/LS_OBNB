@@ -24,6 +24,6 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def destroy?
-    record.user == user && record.booking_start.future?
+    (record.user == user || record.office.user == user) && record.booking_start.future?
   end
 end

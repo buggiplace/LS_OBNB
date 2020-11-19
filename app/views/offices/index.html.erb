@@ -4,7 +4,13 @@
     </div>
   </div>
 </div>
-
+<br>
+<br>
+<div id="map"
+   style="width: 100%; height: 600px;"
+   data-markers="<%= @markers.to_json %>"
+   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
 <div class="container d-flex justify-content-center mt-5">
   <% if policy(Office).create? %>
         <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main'%>

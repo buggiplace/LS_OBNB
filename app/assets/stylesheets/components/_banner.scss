@@ -12,25 +12,27 @@
   // left: 5%;
   // z-index: 20;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-  background: rgba(0, 0, 0, 0.4);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.02);
+  // background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(4px);
   // border-radius: 10px;
   width: 100%;
 }
 
-
 .banner-content h1 {
   margin: 0;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  text-shadow: 2px 2px 4px rga(0,0,0,0.2);
   font-size: 33px;
   font-weight: bold;
+  // backdrop-filter: blur(4px);
 }
 
 .banner-content p {
- font-size: 20px;
+  font-size: 20px;
   color: white;
   opacity: .7;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+  // backdrop-filter: blur(4px);
 }
 

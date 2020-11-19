@@ -11,9 +11,17 @@
     </div>
   </div>
 <% end %>
+<!-- comment in again when bookings controller show is done for the map or delete
+<br>
+  <div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%#= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+<br> -->
 <div class="container mt-5 d-flex flex-column align-items-center">
   <div class="card-product mb-4">
-    <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1489&q=80" />
+    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
     <div class="card-product-infos">
       <h2><%= @office.name %></h2>
       <p><strong>Description:</strong> <%= @office.description%></p>
@@ -22,9 +30,8 @@
   </div>
 
   <br>
-
   <div class="card-product">
-    <img src="https://images.unsplash.com/photo-1515524738708-327f6b0037a7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+    <img src="https://images.unsplash.com/photo-1526411116157-21b2b172c6bc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" />
     <div class="card-product-infos">
       <h2>Additional infos: </h2>
       <p><strong>Table_num:</strong> <%= @office.table_num%></p>
@@ -61,5 +68,5 @@
 </div>
 
 <% if policy(@office).edit? %>
-    <%= link_to "Update", edit_office_path(@office) %>
+    <%= link_to "✏️ Update my office", edit_office_path(@office) %>
   <% end %>

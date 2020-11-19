@@ -35,7 +35,6 @@ class ChangeModelOffice < ActiveRecord::Migration[6.0]
         add_column :offices, :cat_rural, :boolean
         add_column :offices, :cat_boutique, :boolean
         add_column :offices, :cat_black_lable, :boolean
-
   end
 end
 

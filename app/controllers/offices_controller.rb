@@ -57,7 +57,13 @@ class OfficesController < ApplicationController
   private
 
   def office_params
-    params.require(:office).permit(:office_name, :description, :address, :address_street, :address_zip, :address_city, :rate_per_day, :table_num, :placehold_url, :drinks, :snacks, :social_events, :community_slack, :pets_allowed, :night_shift, :community_manager, :outdoor_area, :smoking_area, :cat_open_space, :cat_single_space, :cat_corporate, :cat_startup, :cat_private_owner, :cat_skyscraper, :cat_city, :cat_rural, :cat_boutique, :cat_black_lable, :photo)
+    params.require(:office).permit(
+      :office_name, :description, :address_street, :address_zip, :address_city,
+      :rate_per_day, :table_num, :placehold_url, :drinks, :snacks, :social_events, :community_slack, :pets_allowed,
+      :night_shift, :community_manager, :outdoor_area, :smoking_area, :cat_open_space, :cat_single_space,
+      :cat_corporate, :cat_startup, :cat_private_owner, :cat_skyscraper, :cat_city, :cat_rural, :cat_boutique,
+      :cat_black_lable, :photo
+    )
   end
 
   def find

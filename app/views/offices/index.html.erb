@@ -7,11 +7,28 @@
 <br>
 <br>
 
+
 <div class="container d-flex justify-content-center mt-3 mb-3">
    <% if policy(Office).create? %>
      <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main mr-2'%>
    <% end %>
    <a href="#office_grid" class="btn btn-obnb-main ml-2">Jump to offices</a>
+
+<div>
+  <%= form_tag offices_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "e.g. Berlin"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+</div>
+<div class="container d-flex justify-content-center mt-5">
+  <% if policy(Office).create? %>
+        <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main'%>
+  <% end %>
+
 </div>
 
 <div class="container mb-3 ">
@@ -40,6 +57,9 @@
   </div>
 </div>
   <% end %>
+<% end %>
+</div>
+
 <% end %>
 </div>
 

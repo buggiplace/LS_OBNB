@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 
-ActiveRecord::Schema.define(version: 2020_11_19_072318) do
+ActiveRecord::Schema.define(version: 2020_11_19_115245) do
 
 
   # These are extensions that must be enabled in order to support this database
@@ -51,19 +51,39 @@ ActiveRecord::Schema.define(version: 2020_11_19_072318) do
   end
 
   create_table "offices", force: :cascade do |t|
-    t.string "name"
+    t.string "office_name"
     t.string "description"
-    t.string "address"
-    t.integer "price"
-    t.string "availability_description"
-    t.string "table_num"
+    t.integer "rate_per_day"
     t.boolean "wifi"
-    t.boolean "amenities"
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.float "latitude"
     t.float "longitude"
+    t.string "address_street"
+    t.string "address_zip"
+    t.string "address_city"
+    t.integer "table_num"
+    t.string "placehold_url"
+    t.boolean "drinks"
+    t.boolean "snacks"
+    t.boolean "social_events"
+    t.boolean "community_slack"
+    t.boolean "pets_allowed"
+    t.boolean "night_shift"
+    t.boolean "community_manager"
+    t.boolean "outdoor_area"
+    t.boolean "smoking_area"
+    t.boolean "cat_open_space"
+    t.boolean "cat_single_space"
+    t.boolean "cat_corporate"
+    t.boolean "cat_startup"
+    t.boolean "cat_private_owner"
+    t.boolean "cat_skyscraper"
+    t.boolean "cat_city"
+    t.boolean "cat_rural"
+    t.boolean "cat_boutique"
+    t.boolean "cat_black_lable"
     t.index ["user_id"], name: "index_offices_on_user_id"
   end
 
@@ -75,6 +95,8 @@ ActiveRecord::Schema.define(version: 2020_11_19_072318) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "first_name"
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

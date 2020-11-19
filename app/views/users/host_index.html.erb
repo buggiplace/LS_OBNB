@@ -14,9 +14,8 @@
 <div class=" mt-5 d-flex flex-column align-items-center flex-grow">
 <!--   <div class="card-product-myobnb mb-4"> -->
     <div class="card-product-infos-myobnb mr-1 ml-1">
-      <h2><%= office.name %></h2>
-      <p><strong>Office name:</strong> <%= office.name %></p>
-
+      <h2><%= office.office_name %></h2>
+      <p><strong>Office name:</strong> <%= office.office_name %></p>
       <% office.bookings.each do |booking| %>
         <p><strong>Booking ID:</strong><%= booking.id %></p>
         <p><strong>Customer Email:</strong><%= booking.user.email %></p>

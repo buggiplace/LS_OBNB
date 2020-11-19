@@ -5,11 +5,11 @@
   <div class="card-product mt-2">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
     <div class="card-product-infos">
-      <h2><%= booking.office.name %></h2>
+      <h2><%= booking.office.office_name %></h2>
       <p>Start Date: <%= booking.booking_start%></p>
       <p>End Date: <%= booking.booking_end%></p>
-      
-      <% if policy(booking).destroy? %>      
+
+      <% if policy(booking).destroy? %>
        <%= link_to "Delete", booking_path(booking), method: "delete", data: { confirm: "Are you sure?" } %>
       <% end %>
       </div>

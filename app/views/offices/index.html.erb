@@ -28,10 +28,10 @@
 <% end %>
   <div class="card-trip-infos">
     <div>
-      <h2><%= link_to off.name, office_path(off) %></h2>
+      <h2><%= link_to off.office_name, office_path(off) %></h2>
       <p>Location: <%= off.address %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= off.price %> €</h2>
+    <h2 class="card-trip-pricing"><%= off.rate_per_day %> €</h2>
     <img src="https://i.pravatar.cc/101" class="card-trip-user avatar-bordered" />
   </div>
 </div>

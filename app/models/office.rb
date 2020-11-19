@@ -1,12 +1,11 @@
 class Office < ApplicationRecord
-  validates :name, presence: true, allow_blank: false
-  validates :description, presence: true, allow_blank: false
-  validates :address, presence: true, allow_blank: false
-  validates :price, presence: true, allow_blank: false
-  validates :availability_description, presence: true, allow_blank: false
-  validates :table_num, presence: true, allow_blank: false
-  validates :wifi, presence: true
-  validates :amenities, presence: true, allow_blank: false
+  validates :office_name, presence: true
+  validates :description, presence: true
+  validates :address_street, presence: true
+  validates :address_zip, presence: true
+  validates :address_city, presence: true
+  validates :rate_per_day, presence: true
+  validates :table_num, presence: true
 
   belongs_to :user
 
@@ -15,5 +14,13 @@ class Office < ApplicationRecord
   has_one_attached :photo
 
   geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  after_validation :geocode, if: :save_to_geocode?
+
+  def address
+    [address_street, address_zip, address_city].compact.join(', ')
+  end
+
+  def save_to_geocode?
+    will_save_change_to_address_street? && will_save_change_to_address_zip? && will_save_change_to_address_city?
+  end
 end

@@ -8,14 +8,14 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :address %>
+    <%= f.input :office_name %>
+    <%= f.input :address_street %>
+    <%= f.input :address_zip %>
+    <%= f.input :address:city %>
     <%= f.input :description %>
-    <%= f.input :price %>
-    <%= f.input :wifi %>
-    <%= f.input :availability_description %>
+    <%= f.input :rate_per_day %>
     <%= f.input :table_num %>
-    <%= f.input :amenities %>
+    <%= f.input :wifi %>
     <%= f.input :photo, as: :file %>
     </div>
     <div class="form-actions">
@@ -23,3 +23,14 @@
     </div>
   <% end %>
 </div>
+
+        <!-- add_column :offices, :placehold_url, :string
+        add_column :offices, :drinks, :boolean
+        add_column :offices, :snacks, :boolean
+        add_column :offices, :social_events, :boolean
+        add_column :offices, :community_slack, :boolean
+        add_column :offices, :pets_allowed, :boolean
+        add_column :offices, :night_shift, :boolean
+        add_column :offices, :community_manager, :boolean
+        add_column :offices, :outdoor_area, :boolean
+        add_column :offices, :smoking_area, :boolean -->

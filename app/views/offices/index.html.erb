@@ -13,6 +13,7 @@
      <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main mr-2'%>
    <% end %>
    <a href="#office_grid" class="btn btn-obnb-main ml-2">Jump to offices</a>
+</div>
 
 <div>
   <%= form_tag offices_path, method: :get do %>
@@ -24,6 +25,7 @@
   <%= submit_tag "Search", class: "btn btn-primary" %>
 <% end %>
 </div>
+
 <div class="container d-flex justify-content-center mt-5">
   <% if policy(Office).create? %>
         <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main'%>
@@ -60,6 +62,6 @@
 <% end %>
 </div>
 
-<% end %>
-</div>
+
+
 

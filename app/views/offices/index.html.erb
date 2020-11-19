@@ -6,41 +6,26 @@
 </div>
 <br>
 <br>
-
-
-<div class="container d-flex justify-content-center mt-3 mb-3">
+<!-- <div class="container d-flex justify-content-center mt-3 mb-3">
    <% if policy(Office).create? %>
-     <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main mr-2'%>
+     <%= link_to 'Add a new office', new_office_path, class: 'btn btn-obnb-main mr-2'%>
    <% end %>
-   <a href="#office_grid" class="btn btn-obnb-main ml-2">Jump to offices</a>
-</div>
+</div> -->
 
-<div>
+<div class="container">
+  <div>
   <%= form_tag offices_path, method: :get do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "e.g. Berlin"
   %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <%= submit_tag "Search", class: "btn btn-obnb-main" %>
 <% end %>
 </div>
-
-<div class="container d-flex justify-content-center mt-5">
-  <% if policy(Office).create? %>
-        <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main'%>
-  <% end %>
-
 </div>
-
-<div class="container mb-3 ">
-  <div id="map" class="map-index"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
-
-<div class="container cards mt-5" id="office_grid">
+<div class="content">
+<div class="container cards mt-5">
   <% @offices.each do |off| %>
   <%= link_to office_path(off) do%>
   <div class="card-trip">
@@ -60,6 +45,14 @@
 </div>
   <% end %>
 <% end %>
+</div>
+
+<div class="container mb-3 ">
+  <div id="map" class="map-index"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
 </div>
 
 

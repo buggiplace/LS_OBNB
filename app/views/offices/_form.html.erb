@@ -4,7 +4,7 @@
   <%= simple_form_for(@office) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <div class="form-inputs p-5">
+    <div class="form-inputs p-5  ">
       <%= f.input :office_name, class: "form-group"%>
       <%= f.input :address_street, class: "form-group col-md-4" %>
       <%= f.input :address_zip, class: "form-group col-md-4" %>
@@ -13,11 +13,8 @@
       <%= f.input :rate_per_day, class: "form-group col-md-4" %>
       <%= f.input :table_num, class: "form-group col-md-4"  %>
 
-      <div class="form-check-inline">
 
-      </div>
-
-        <table class="table d-flex justify-content-around">
+        <table class="table d-flex justify-content-start">
           <p>Please indicate what your office has to offer</p>
           <tbody>
             <tr>

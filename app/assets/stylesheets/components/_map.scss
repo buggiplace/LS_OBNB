@@ -25,15 +25,25 @@
   color: rgba(225, 25, 95, 1.0);
 }
 
-
-
-
 .map-index {
   width: 100%;
-  height: 55vh;
+  align-self: flex-start;
+  height: 100vh;
+   position: sticky;
+  top: 0;
+  border-style: solid;
+  border-color: rgba(225, 25, 95, 0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // align-self: flex-start;
+  display: block;
+}
+
+
+.map-show {
+  width: 100%;
+  height: 60vh;
   border-style: solid;
   border-color: rgba(225, 25, 95, 0.2);
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
-
 

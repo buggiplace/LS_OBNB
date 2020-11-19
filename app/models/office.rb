@@ -1,10 +1,10 @@
 class Office < ApplicationRecord
-  validates :name, presence: true
+  validates :office_name, presence: true
   validates :description, presence: true
   validates :address_street, presence: true
   validates :address_zip, presence: true
   validates :address_city, presence: true
-  validates :price, presence: true
+  validates :rate_per_day, presence: true
   validates :table_num, presence: true
 
   belongs_to :user

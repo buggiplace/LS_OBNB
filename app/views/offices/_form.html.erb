@@ -1,36 +1,55 @@
 <br>
-<br>
-<br>
-<br>
-<br>
-<div class="container form-width">
+<div class="container form-width p-5">
+  <h1>Become a host and list an office</h1>
   <%= simple_form_for(@office) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-    <div class="form-inputs">
-    <%= f.input :office_name %>
-    <%= f.input :address_street %>
-    <%= f.input :address_zip %>
-    <%= f.input :address_city %>
-    <%= f.input :description %>
-    <%= f.input :rate_per_day %>
-    <%= f.input :table_num %>
-    <%= f.input :wifi %>
-    <%= f.input :photo, as: :file %>
+    <div class="form-inputs p-5">
+      <%= f.input :office_name, class: "form-group"%>
+      <%= f.input :address_street, class: "form-group col-md-4" %>
+      <%= f.input :address_zip, class: "form-group col-md-4" %>
+      <%= f.input :address_city, class: "form-group col-md-4" %>
+      <%= f.input :description, class: "form-group col-md-4"%>
+      <%= f.input :rate_per_day, class: "form-group col-md-4" %>
+      <%= f.input :table_num, class: "form-group col-md-4"  %>
+
+      <div class="form-check-inline">
+
+      </div>
+
+        <table class="table d-flex justify-content-around">
+          <p>Please indicate what your office has to offer</p>
+          <tbody>
+            <tr>
+              <td><%= f.input :wifi %></td>
+              <td><%= f.input :drinks%></td>
+            </tr>
+            <tr>
+              <td><%= f.input :snacks %></td>
+              <td><%= f.input :social_events %></td>
+
+            </tr>
+            <tr>
+              <td><%= f.input :community_slack %></td>
+              <td><%= f.input :community_manager%></td>
+            </tr>
+            <tr>
+              <td><%= f.input :night_shift%></td>
+              <td><%= f.input :pets_allowed%></td>
+            </tr>
+            <tr>
+              <td><%= f.input :outdoor_area %></td>
+              <td><%= f.input :smoking_area %></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class= "mb-2">
+          <p>Please upload a photo</p>
+          <%= f.input :photo, as: :file %>
+        </div>
     </div>
     <div class="form-actions">
     <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
     </div>
   <% end %>
 </div>
-
-        <!-- add_column :offices, :placehold_url, :string
-        add_column :offices, :drinks, :boolean
-        add_column :offices, :snacks, :boolean
-        add_column :offices, :social_events, :boolean
-        add_column :offices, :community_slack, :boolean
-        add_column :offices, :pets_allowed, :boolean
-        add_column :offices, :night_shift, :boolean
-        add_column :offices, :community_manager, :boolean
-        add_column :offices, :outdoor_area, :boolean
-        add_column :offices, :smoking_area, :boolean -->

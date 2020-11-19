@@ -37,11 +37,13 @@ class BookingsController < ApplicationController
   end
 
   def accept
+    authorize @booking
     @booking.update(status: 'Accepted')
     redirect_to myobnb_path, notice: 'Booking accepted.'
   end
   
   def reject
+    authorize @booking
     @booking.update(status: 'Rejected')
     redirect_to myobnb_path, notice: 'Booking rejected.'
   end  

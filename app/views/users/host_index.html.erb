@@ -22,8 +22,17 @@
         <p><strong>Customer Email:</strong><%= booking.user.email %></p>
         <p><strong>Booking Start:</strong><%= booking.booking_start %></p>
         <p><strong>Booking End:</strong><%= booking.booking_end %></p>
-        <%= link_to("Accept", accept_booking_path(booking), method: "put", class: 'btn btn-danger') %>
-        <%= link_to("Reject", reject_booking_path(booking), method: "put", class: 'btn btn-danger') %>
+        <p><strong>Booking status:</strong><%= booking.status %></p>
+        
+        <% if policy(booking).accept? %> 
+          <%= link_to("Accept", accept_booking_path(booking), method: "put", class: 'btn btn-danger') %>
+        <% end %>
+        <% if policy(booking).reject? %> 
+          <%= link_to("Reject", reject_booking_path(booking), method: "put", class: 'btn btn-danger') %>
+        <% end %>
+        <% if policy(booking).destroy? %>      
+          <%= link_to "Delete", booking_path(booking), method: "delete", class: 'btn btn-danger', data: { confirm: "Are you sure?" } %>
+        <% end %>
       <% end  %>
     </div>
  <!--  </div> -->

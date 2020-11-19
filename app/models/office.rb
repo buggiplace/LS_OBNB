@@ -23,4 +23,11 @@ class Office < ApplicationRecord
   def save_to_geocode?
     will_save_change_to_address_street? && will_save_change_to_address_zip? && will_save_change_to_address_city?
   end
+
+  include PgSearch::Model
+  pg_search_scope :search_by_address_city_zip_street,
+    against: [ :address_city, :address_zip, :address_street ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

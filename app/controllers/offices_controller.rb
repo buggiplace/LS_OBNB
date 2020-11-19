@@ -4,7 +4,13 @@ class OfficesController < ApplicationController
   before_action :find, only: %i[show edit update destroy]
 
   def index
-    @offices = Office.all
+    if params[:query].present?
+      # sql_query = "address_zip @@ :query OR address_city @@ :query OR address_street @@ :query"
+      # @offices = Office.where(sql_query, query: "%#{params[:query]}%")
+      @offices = Office.search_by_address_city_zip_street(params[:query])
+    else
+      @offices = Office.all
+    end
     @markers = @offices.geocoded.map do |office|
       {
         lat: office.latitude,

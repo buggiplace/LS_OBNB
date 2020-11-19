@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:edit]
 
-  before_action :find_booking, only: [:show, :destroy, :update, :edit]
+  before_action :find_booking, only: [:show, :destroy, :update, :edit, :accept, :reject]
 
   def index
     @bookings = Booking.all
@@ -35,6 +35,16 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
     redirect_to booking_path(@booking.id), notice: 'Booking was successfully updated.'
   end
+
+  def accept
+    @booking.update(status: 'Accepted')
+    redirect_to myobnb_path, notice: 'Booking accepted.'
+  end
+  
+  def reject
+    @booking.update(status: 'Rejected')
+    redirect_to myobnb_path, notice: 'Booking rejected.'
+  end  
 
   def destroy
     authorize @booking

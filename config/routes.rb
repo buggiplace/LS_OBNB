@@ -12,9 +12,7 @@ Rails.application.routes.draw do
     end  
   end
 
-  
   get "myobnb", to: 'users#host_index'
-
 end
 
 

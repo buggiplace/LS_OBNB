@@ -1,12 +1,11 @@
 class Office < ApplicationRecord
-  validates :name, presence: true, allow_blank: false
-  validates :description, presence: true, allow_blank: false
-  validates :address, presence: true, allow_blank: false
-  validates :price, presence: true, allow_blank: false
-  validates :availability_description, presence: true, allow_blank: false
-  validates :table_num, presence: true, allow_blank: false
-  validates :wifi, presence: true
-  validates :amenities, presence: true, allow_blank: false
+  validates :name, presence: true
+  validates :description, presence: true
+  validates :address_street, presence: true
+  validates :address_zip, presence: true
+  validates :address_city, presence: true
+  validates :price, presence: true
+  validates :table_num, presence: true
 
   belongs_to :user
 

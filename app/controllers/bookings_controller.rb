@@ -1,7 +1,7 @@
 class BookingsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:edit]
 
-  before_action :find_booking, only: [:show, :destroy, :update, :edit]
+  before_action :find_booking, only: [:show, :destroy, :update, :edit, :accept, :reject]
 
   def index
     @bookings = Booking.all
@@ -18,6 +18,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save!
+      UserMailer.with(booking: @booking).newbooking.deliver_now
       #change redirect to overview page of my bookings later, when it exists
       redirect_to myobnb_path, notice: "Booking was successfully created."
       # redirect_to office_path(@office), notice: "Booking was successfully created."
@@ -35,6 +36,18 @@ class BookingsController < ApplicationController
     @booking.update(booking_params)
     redirect_to booking_path(@booking.id), notice: 'Booking was successfully updated.'
   end
+
+  def accept
+    authorize @booking
+    @booking.update(status: 'Accepted')
+    redirect_to myobnb_path, notice: 'Booking accepted.'
+  end
+  
+  def reject
+    authorize @booking
+    @booking.update(status: 'Rejected')
+    redirect_to myobnb_path, notice: 'Booking rejected.'
+  end  
 
   def destroy
     authorize @booking

@@ -5,9 +5,14 @@ Rails.application.routes.draw do
   resources :offices do
     resources(:bookings, {only: [:create, :show]})
   end
-  resources(:bookings, {only: [:index, :destroy]})
-  get "myobnb", to: 'users#host_index'
+  resources(:bookings, {only: [:index, :destroy]}) do 
+    member do
+      put :accept
+      put :reject
+    end  
+  end
 
+  get "myobnb", to: 'users#host_index'
 end
 
 

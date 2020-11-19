@@ -6,9 +6,13 @@
   filter: saturate(80%);
   transition-duration: 0.1s;
   height: 100%;
+
 }
 
-
+.card-trip a {
+  // text-decoration: none !important;
+  display: inline-block;
+}
 
 .card-trip:hover {
   transform: scale(1.02);
@@ -17,9 +21,6 @@
   border-color: 3px black;
   transition: 500ms;
 }
-
-
-
 
 .card-trip > img {
   height: 200px;
@@ -39,6 +40,10 @@
   margin: 0;
 }
 
+.card-trip-infos a {
+  // text-decoration: none !important;
+  display: inline-block;
+}
 
 .card-trip .card-trip-infos {
   padding: 16px;

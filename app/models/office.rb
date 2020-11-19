@@ -14,5 +14,13 @@ class Office < ApplicationRecord
   has_one_attached :photo
 
   geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  after_validation :geocode, if: :save_to_geocode?
+
+  def address
+    [address_street, address_zip, address_city].compact.join(', ')
+  end
+
+  def save_to_geocode?
+    will_save_change_to_address_street? && will_save_change_to_address_zip? && will_save_change_to_address_city?
+  end
 end

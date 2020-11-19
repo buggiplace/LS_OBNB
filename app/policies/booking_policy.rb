@@ -26,4 +26,12 @@ class BookingPolicy < ApplicationPolicy
   def destroy?
     (record.user == user || record.office.user == user) && record.booking_start.future?
   end
+
+  def accept?
+    record.office.user == user && record.status == 'Pending'
+  end
+  
+  def reject?
+    record.office.user == user && record.status == 'Pending'
+  end  
 end

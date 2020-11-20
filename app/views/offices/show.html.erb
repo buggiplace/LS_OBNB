@@ -5,7 +5,7 @@
     </div>
   </div>
   <% else %>
-  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://res.cloudinary.com/dvoduvlcz/image/upload/v1605699486/office5_uybgde.jpg');">
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= @office.placehold_url %>');">
     <div class="banner-content pt-2 pl-3 pb-2">
       <h1><%= @office.office_name%></h1>
     </div>

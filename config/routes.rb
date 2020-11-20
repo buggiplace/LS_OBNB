@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     collection do
       get :private_owner_index
     end
+    collection do
+      get :pets_allowed_index
+    end
     resources(:bookings, {only: [:create, :show]})
   end
   resources(:bookings, {only: [:index, :destroy]}) do

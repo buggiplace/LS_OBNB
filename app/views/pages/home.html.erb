@@ -7,9 +7,9 @@
     <p>Start looking for a perfect desk to rent in your area now.</p>
     <div class="d-flex justify-content-around pb-3">
     <% if policy(Office).create? %>
-      <%= link_to 'Become a host', new_office_path, class: 'btn btn btn-obnb-main'%>
+      <%= link_to 'Become a host', new_office_path, class: 'btn btn btn-obnb-main-home'%>
     <% end %>
-      <%= link_to 'Show all offices', offices_path, class: 'btn btn btn-obnb-secondary'%>
+      <%= link_to 'Show all offices', offices_path, class: 'btn btn btn-obnb-secondary-home'%>
     </div>
   </div>
 </div>
@@ -17,26 +17,26 @@
 <div class="icon-box d-flex flex-row justify-content-around mb-5">
     <div class="d-flex flex-column justify-content-center">
       <div>
-        <%= image_tag "network.svg", class: 'icons  p-2' %>
+        <%= image_tag "group.svg", class: 'icons  p-2' %>
       </div>
       <div class="icons-text">
-        <p><strong>Networking</strong></p>
+        <p style="font-size: 25px"><strong>Networking</strong></p>
       </div>
     </div>
     <div class="d-flex flex-column justify-content-center">
       <div>
-        <%= image_tag "globe.svg", class: 'icons d-inline-flex p-2' %>
+        <%= image_tag "earth.svg", class: 'icons d-inline-flex p-2' %>
       </div>
       <div class="icons-text">
-        <p><strong>Global presence</strong></p>
+        <pstyle style="font-size: 25px"><strong>Global presence</strong></p>
       </div>
     </div>
     <div class="d-flex flex-column justify-content-center">
       <div>
-        <%= image_tag "money.svg", class: 'icons d-inline-flex p-2' %>
+        <%= image_tag "community.svg", class: 'icons d-inline-flex p-2' %>
       </div>
       <div class="icons-text">
-        <p><strong>Low Budget</strong></p>
+        <p style="font-size: 25px"><strong>Low Budget</strong></p>
       </div>
     </div>
 </div>

@@ -1,10 +1,10 @@
 class ApplicationController < ActionController::Base
-  # [...]
+  # [...] # everthing is forbidden
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   include Pundit
 
-  # Pundit: white-list approach.
+  # Pundit: white-list approach. # I can specify for which actions its not forbidden
   after_action :verify_authorized, except: :index, unless: :skip_pundit?
   # after_action :verify_policy_scoped, only: :index, unless: :skip_pundit?
     # use if you wanna authorize a user to only see a clearly defined subset of index data

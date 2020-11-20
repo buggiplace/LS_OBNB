@@ -25,7 +25,7 @@
 
 <div class="content">
 <div class="container cards">
-  <% @@corporate_offices.each do |off| %>
+  <% @corporate_offices.each do |off| %>
   <%= link_to office_path(off) do%>
   <div class="card-trip">
   <% if off.photo.attached? %>

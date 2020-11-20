@@ -7,12 +7,18 @@
 <br>
 <br>
 
-<h1>Host View: My Offices & Bookings</h1>
-<div class="container d-flex align-items-center flex-column">
+<div class = "d-flex justify-content-center mb-5">
+  <a href="#customerview" class="btn btn-obnb-main">Jump to customer section</a>
+  <a href="#hostview" class="btn btn-obnb-main">Jump to host section</a>
+</div>
+
+
+<h1 id="hostview" class="mb-3">Host View: My Offices & Bookings</h1>
+<div class="container d-flex align-items-center flex-column mb-5">
 <% @offices.each do |office| %>
 
 <div class="card-myobnb">
-  <img src="https://images.unsplash.com/photo-1593672755342-741a7f868732?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80" />
+  <i class="far fa-building fa-4x pl-2"></i>
   <div class="card-myobnb-infos">
     <h2><strong>Office Name: </strong><%= office.office_name %></h2>
     <p><%= office.address_street%>, <%= office.address_zip%>, <%= office.address_city%></p>
@@ -24,6 +30,7 @@
     <div>
               <h2><strong>Booking ID:</strong><%= booking.id %></h2>
               <br>
+              <p><strong>Customer Name:</strong><%= booking.user.first_name%>, <%= booking.user.last_name%></p>
               <p><strong>Customer Email:</strong><%= booking.user.email %></p>
               <p><strong>Booking Start:</strong><%= booking.booking_start %></p>
               <p><strong>Booking End:</strong><%= booking.booking_end %></p>
@@ -47,21 +54,39 @@
 </div>
 
 <!-- neu -->
+<h1 id="customerview" class="mb-3">Customer View: My personal Bookings</h1>
 
-
-<!-- <div class="ml-4">
-  <h1>Customer View: My personal Bookings</h1>
-  <div class="container d-flex">
-    <% current_user.bookings.each do |booking| %>
-    <div class=" mt-5 d-flex flex-column align-items-center flex-grow">
-      <div class="card-product-infos-myobnb mr-1 ml-1">
-        <h2><strong>ID:</strong> <%= booking.id  %></h2>
-        <p><strong>Booking start</strong> <%= booking.booking_start  %></p>
-        <p><strong>Booking end</strong> <%= booking.booking_end  %></p>
-        <p><strong>My Email</strong> <%= booking.user.email  %></p>
-        <% end %>
-      </div>
-    </div>
+<div class="container d-flex align-items-center flex-column mb-5">
+<div class="card-myobnb">
+  <i class="far fa-user fa-4x pl-2"></i>
+  <div class="card-myobnb-infos">
+    <h2><strong>My customer data</strong></h2>
+    <p><strong>Name:</strong><%= current_user.first_name%>   <%= current_user.last_name%></p>
+    <p><strong>Email:</strong><%= current_user.email %></p>
   </div>
-</div> -->
+</div>
 
+
+
+
+<% current_user.bookings.each do |booking| %>
+<div class="container card-myobnb-booking mt-2">
+  <div class="card-myobnb-infos d-flex flex-column align-items-center">
+    <div>
+              <h2><strong>Booking ID:</strong><%= booking.id %></h2>
+              <h2><strong>Where:</strong><%= booking.office.office_name %></h2>
+              <br>
+              <p><strong>Customer Email:</strong><%= booking.user.email %></p>
+              <p><strong>Booking Start:</strong><%= booking.booking_start %></p>
+              <p><strong>Booking End:</strong><%= booking.booking_end %></p>
+              <p><strong>Booking status:</strong><%= booking.status %></p>
+    </div>
+
+  </div>
+      </div>
+    <% end %>
+
+<div class = "mt-5">
+  <a href="#customerview" class="btn btn-obnb-main">Jump to customer section</a>
+  <a href="#hostview" class="btn btn-obnb-main">Jump to host section</a>
+</div>

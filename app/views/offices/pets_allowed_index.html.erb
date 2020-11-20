@@ -6,22 +6,25 @@
 </div>
 <br>
 <br>
+<!-- <div class="container d-flex justify-content-center mt-3 mb-3">
+   <% if policy(Office).create? %>
+     <%= link_to 'Add a new office', new_office_path, class: 'btn btn-obnb-main mr-2'%>
+   <% end %>
+</div> -->
 
-<div class="container d-flex justify-content-center mt-5">
-  <% if policy(Office).create? %>
-        <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main'%>
-  <% end %>
-
+<div class="container d-flex justify-content-center search-to-container mb-5">
+  <%= form_tag offices_path, {method: :get, class: "search_form2"} do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "e.g. Berlin"
+  %>
+  <%= submit_tag "Search", class: "btn btn-obnb-main ml-2" %>
+<% end %>
 </div>
 
-<div class="container mb-3 ">
-  <div id="map" class="map-index"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
-
-<div class="container cards mt-5" id="office_grid">
+<div class="content">
+<div class="container cards">
   <% @pets_allowed_offices.each do |off| %>
   <%= link_to office_path(off) do%>
   <div class="card-trip">
@@ -32,10 +35,10 @@
           <% end %>
   <div class="card-trip-infos">
     <div>
-      <h2><%= off.office_name %></h2>
-      <p><%= off.address %></p>
+      <h2 class="card-no-deco"><%= off.office_name %></h2>
+      <p class="card-no-deco"><%= off.address %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= off.rate_per_day %>€/ Day</h2>
+    <h2 class="card-trip-pricing card-no-deco"><%= off.rate_per_day %>€/ Day</h2>
     <img src="https://i.pravatar.cc/101" class="card-trip-user avatar-bordered" />
   </div>
 </div>
@@ -43,6 +46,10 @@
 <% end %>
 </div>
 
-
-
-
+<div class="container mb-3 ">
+  <div id="map" class="map-index"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+</div>

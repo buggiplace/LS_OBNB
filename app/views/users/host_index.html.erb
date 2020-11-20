@@ -13,8 +13,8 @@
 </div>
 
 
-<h1 id="hostview" class="mb-3">Host View: My Offices & Bookings</h1>
 <div class="container d-flex align-items-center flex-column mb-5">
+<h1 id="hostview" class="mb-3">Host View: My Offices & Bookings</h1>
 <% @offices.each do |office| %>
 
 <div class="card-myobnb">
@@ -54,9 +54,9 @@
 </div>
 
 <!-- neu -->
-<h1 id="customerview" class="mb-3">Customer View: My personal Bookings</h1>
 
 <div class="container d-flex align-items-center flex-column mb-5">
+<h1 id="customerview" class="mb-3">Customer View: My personal Bookings</h1>
 <div class="card-myobnb">
   <i class="far fa-user fa-4x pl-2"></i>
   <div class="card-myobnb-infos">
@@ -65,9 +65,6 @@
     <p><strong>Email:</strong><%= current_user.email %></p>
   </div>
 </div>
-
-
-
 
 <% current_user.bookings.each do |booking| %>
 <div class="container card-myobnb-booking mt-2">
@@ -83,7 +80,7 @@
     </div>
 
   </div>
-      </div>
+</div>
     <% end %>
 
 <div class = "mt-5">

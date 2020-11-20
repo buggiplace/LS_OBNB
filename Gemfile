@@ -25,7 +25,7 @@ gem 'faker'
 gem 'dotenv-rails', groups: [:development, :test]
 gem 'cloudinary', '~> 1.16.0'
 gem 'geocoder'
-gem "letter_opener"
+# gem "letter_opener", :group => :development
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

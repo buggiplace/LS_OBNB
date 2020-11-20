@@ -1,5 +1,5 @@
 class OfficesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show corporate_index]
+  skip_before_action :authenticate_user!, only: %i[index show corporate_index startup_index private_owner_index pets_allowed_index]
   skip_after_action :verify_authorized, only: %i[corporate_index startup_index private_owner_index pets_allowed_index]
 
   before_action :find, only: %i[show edit update destroy]

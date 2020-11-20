@@ -1,21 +1,21 @@
 <br>
-<div class="container form-width p-5">
-  <h1>Become a host and list an office</h1>
+<div class="container form-width p-5 container">
+  <h1 class="container d-flex align-items-center flex-column">Become a host and list an office</h1>
   <%= simple_form_for(@office) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="form-inputs p-5 d-flex justify-content-center flex-column">
       <%= f.input :office_name, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
-      <%= f.input :address_street, class: "form-group col-md-4" %>
-      <%= f.input :address_zip, class: "form-group col-md-4" %>
-      <%= f.input :address_city, class: "form-group col-md-4" %>
-      <%= f.input :description, class: "form-group col-md-4"%>
-      <%= f.input :rate_per_day, class: "form-group col-md-4" %>
-      <%= f.input :table_num, class: "form-group col-md-4"  %>
+      <%= f.input :address_street, wrapper_html: {class: "form-group d-flex align-items-center flex-column"} %>
+      <%= f.input :address_zip, wrapper_html: {class: "form-group d-flex align-items-center flex-column"} %>
+      <%= f.input :address_city, wrapper_html: {class: "form-group d-flex align-items-center flex-column"} %>
+      <%= f.input :description, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
+      <%= f.input :rate_per_day, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
+      <%= f.input :table_num, wrapper_html: {class: "form-group d-flex align-items-center flex-column"}%>
 
 
         <table class="table d-flex justify-content-center">
-          <p>Please indicate what your office has to offer</p>
+          <p class="d-flex justify-content-center mt-5">Please indicate what your office has to offer</p>
           <tbody>
             <tr>
               <td><%= f.input :wifi %></td>
@@ -40,13 +40,13 @@
             </tr>
           </tbody>
         </table>
-        <div class= "mb-2">
-          <p>Please upload a photo</p>
+        <div class= "d-flex mb-2 justify-content-center">
+
           <%= f.input :photo, as: :file %>
         </div>
     </div>
-    <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
-    </div>
+        <div class="form-actions">
+        <%= f.button :submit, class: "btn btn-obnb-main-lg" %>
+        </div>
   <% end %>
 </div>

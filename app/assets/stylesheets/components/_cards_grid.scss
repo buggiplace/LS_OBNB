@@ -9,7 +9,16 @@
 //   color: black !important;
 // }
 
+.cards:hover {
+  text-decoration: none!important;
+}
+
 .card-no-deco {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.card-no-deco:hover {
   text-decoration: none !important;
   color: black !important;
 }

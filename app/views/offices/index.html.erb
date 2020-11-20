@@ -12,7 +12,7 @@
    <% end %>
 </div> -->
 
-<div class="container d-flex justify-content-center search-to-container">
+<div class="container d-flex justify-content-center search-to-container mb-5">
   <%= form_tag offices_path, {method: :get, class: "search_form2"} do %>
   <%= text_field_tag :query,
     params[:query],
@@ -38,7 +38,7 @@
       <h2 class="card-no-deco"><%= off.office_name %></h2>
       <p class="card-no-deco"><%= off.address %></p>
     </div>
-    <h2 class="card-trip-pricing"><%= off.rate_per_day %>€/ Day</h2>
+    <h2 class="card-trip-pricing card-no-deco"><%= off.rate_per_day %>€/ Day</h2>
     <img src="https://i.pravatar.cc/101" class="card-trip-user avatar-bordered" />
   </div>
 </div>

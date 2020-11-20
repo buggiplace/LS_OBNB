@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   end
 
   get "myobnb", to: 'users#host_index'
-  mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  # mount LetterOpenerWeb::Engine, at: "/letter_opener"
 end
 
 

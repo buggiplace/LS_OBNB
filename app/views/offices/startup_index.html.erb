@@ -1,0 +1,48 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+  <div class="banner-content pt-2 pl-3 pb-2">
+    <h1>Choose an amazing startup workplace nearby</h1>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="container d-flex justify-content-center mt-5">
+  <% if policy(Office).create? %>
+        <%= link_to 'Add a new office', new_office_path, class: 'btn btn btn-obnb-main'%>
+  <% end %>
+
+</div>
+
+<div class="container mb-3 ">
+  <div id="map" class="map-index"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
+
+<div class="container cards mt-5" id="office_grid">
+  <% @startup_offices.each do |off| %>
+  <%= link_to office_path(off) do%>
+  <div class="card-trip">
+  <% if off.photo.attached? %>
+            <%= cl_image_tag off.photo.key %>
+          <% else %>
+            <img src= "<%= off.placehold_url%>" alt="office">
+          <% end %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= off.office_name %></h2>
+      <p><%= off.address %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= off.rate_per_day %>€/ Day</h2>
+    <img src="https://i.pravatar.cc/101" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
+  <% end %>
+<% end %>
+</div>
+
+
+
+

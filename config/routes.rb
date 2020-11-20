@@ -6,8 +6,13 @@ Rails.application.routes.draw do
     collection do
       get :corporate_index
     end
+    collection do
+      get :startup_index
+    end
+    collection do
+      get :private_owner_index
+    end
     resources(:bookings, {only: [:create, :show]})
-
   end
   resources(:bookings, {only: [:index, :destroy]}) do
     member do

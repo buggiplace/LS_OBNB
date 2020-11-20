@@ -1,0 +1,92 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');">
+  <div class="banner-content pt-2 pl-3 pb-2">
+    <h1>My OBNB</h1>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+
+<div class = "d-flex justify-content-center mb-5">
+  <a href="#customerview" class="btn btn-obnb-main">Jump to customer section</a>
+  <a href="#hostview" class="btn btn-obnb-main">Jump to host section</a>
+</div>
+
+
+<h1 id="hostview" class="mb-3">Host View: My Offices & Bookings</h1>
+<div class="container d-flex align-items-center flex-column mb-5">
+<% @offices.each do |office| %>
+
+<div class="card-myobnb">
+  <i class="far fa-building fa-4x pl-2"></i>
+  <div class="card-myobnb-infos">
+    <h2><strong>Office Name: </strong><%= office.office_name %></h2>
+    <p><%= office.address_street%>, <%= office.address_zip%>, <%= office.address_city%></p>
+  </div>
+</div>
+<% office.bookings.each do |booking| %>
+<div class="card-myobnb-booking mt-2">
+  <div class="card-myobnb-infos d-flex flex-column align-items-center">
+    <div>
+              <h2><strong>Booking ID:</strong><%= booking.id %></h2>
+              <br>
+              <p><strong>Customer Name:</strong><%= booking.user.first_name%>, <%= booking.user.last_name%></p>
+              <p><strong>Customer Email:</strong><%= booking.user.email %></p>
+              <p><strong>Booking Start:</strong><%= booking.booking_start %></p>
+              <p><strong>Booking End:</strong><%= booking.booking_end %></p>
+              <p><strong>Booking status:</strong><%= booking.status %></p>
+    </div>
+  <div>
+     <% if policy(booking).accept? %>
+     <%= link_to("Accept", accept_booking_path(booking), method: "put", class: 'btn btn-obnb-main') %>
+        <% end %>
+        <% if policy(booking).reject? %>
+          <%= link_to("Reject", reject_booking_path(booking), method: "put", class: 'btn btn-obnb-main') %>
+        <% end %>
+        <% if policy(booking).destroy? %>
+          <%= link_to "Delete", booking_path(booking), method: "delete", class: 'btn btn-obnb-main', data: { confirm: "Are you sure?" } %>
+        <% end %>
+   </div>
+  </div>
+      </div>
+    <% end %>
+ <% end  %>
+</div>
+
+<!-- neu -->
+<h1 id="customerview" class="mb-3">Customer View: My personal Bookings</h1>
+
+<div class="container d-flex align-items-center flex-column mb-5">
+<div class="card-myobnb">
+  <i class="far fa-user fa-4x pl-2"></i>
+  <div class="card-myobnb-infos">
+    <h2><strong>My customer data</strong></h2>
+    <p><strong>Name:</strong><%= current_user.first_name%>   <%= current_user.last_name%></p>
+    <p><strong>Email:</strong><%= current_user.email %></p>
+  </div>
+</div>
+
+
+
+
+<% current_user.bookings.each do |booking| %>
+<div class="container card-myobnb-booking mt-2">
+  <div class="card-myobnb-infos d-flex flex-column align-items-center">
+    <div>
+              <h2><strong>Booking ID:</strong><%= booking.id %></h2>
+              <h2><strong>Where:</strong><%= booking.office.office_name %></h2>
+              <br>
+              <p><strong>Customer Email:</strong><%= booking.user.email %></p>
+              <p><strong>Booking Start:</strong><%= booking.booking_start %></p>
+              <p><strong>Booking End:</strong><%= booking.booking_end %></p>
+              <p><strong>Booking status:</strong><%= booking.status %></p>
+    </div>
+
+  </div>
+      </div>
+    <% end %>
+
+<div class = "mt-5">
+  <a href="#customerview" class="btn btn-obnb-main">Jump to customer section</a>
+  <a href="#hostview" class="btn btn-obnb-main">Jump to host section</a>
+</div>

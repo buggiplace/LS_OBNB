@@ -5,7 +5,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 75%;
+  width: 50vw;
 }
 
 .card-myobnb img {
@@ -40,7 +40,7 @@
   // display: flex;
   align-items: center;
   padding: 30px;
-  width: 75%;
+  width: 500px;
   height: 100%;
   font-weight: lighter;
   font-size: 16px;
@@ -50,6 +50,8 @@
   font-size: 20px;
 }
 
-
+// .card-myobnb-booking-central {
+//   width: 75vw !important;
+// }
 
 

@@ -19,11 +19,11 @@ end
 
 puts "User Seed done - 20 added"
 
-puts "Adding 20 offices"
+puts "Adding 50 offices"
 
 require 'csv'
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
-filepath = Rails.root.join('db', 'address_seed2.csv')
+filepath = Rails.root.join('db', 'address_seed4.csv')
 
     CSV.foreach(filepath, csv_options) do |row|
 
@@ -34,11 +34,12 @@ filepath = Rails.root.join('db', 'address_seed2.csv')
           address_street: row['address_street'],
           address_zip: row['address_zip'],
           address_city: row['address_city'],
+          placehold_url: row['picture_link'],
           user_id: User.all.sample.id,
           table_num: Faker::Number.within(range: 1..20),
-          placehold_url: "https://loremflickr.com/1440/800/office,interior/all",
           wifi: Faker::Boolean.boolean,
           drinks: Faker::Boolean.boolean,
+          snacks: Faker::Boolean.boolean,
           social_events: Faker::Boolean.boolean,
           community_slack: Faker::Boolean.boolean,
           pets_allowed: Faker::Boolean.boolean,

@@ -1,5 +1,5 @@
 .form-width {
-  width: 70vw;
+  width: 50%;
   background: rgba(225, 25, 95, 0.02);
   // color: rgba(225, 25, 95, 0.2);
   color: #4A4A4A;
@@ -25,4 +25,21 @@ box-shadow:0px 0px 2px #E1195F;
 .icon-box {
   padding-top: 120px;
   padding-bottom: 120px;
+  background-color: lightgray;
 }
+
+
+.features-table {
+  padding-top: 15px;
+  max-width: 100%;
+  font-size: 13px;
+}
+
+.content {
+  display: flex;
+}
+
+.formadjust {
+  width: 300px;
+}
+

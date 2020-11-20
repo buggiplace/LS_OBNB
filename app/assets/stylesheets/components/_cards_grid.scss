@@ -4,6 +4,16 @@
   grid-gap: 16px;
 }
 
+// .cards a {
+//   text-decoration: none !important;
+//   color: black !important;
+// }
+
+.card-no-deco {
+  text-decoration: none !important;
+  color: black !important;
+}
+
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {

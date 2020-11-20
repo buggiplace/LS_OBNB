@@ -124,16 +124,22 @@
   </div>
   </div>
 
+<div class="container">
+  <div id="map" class="map-show mt-5"
+     data-markers="<%= @marker.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+</div>
 
 
 <% if user_signed_in? %>
-<div class="form-width container mt-5">
+<div class="container form-width d-flex justify-content-center mt-5">
   <%= simple_form_for([@office, @booking]) do |f| %>
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
     <div class="form-inputs">
-      <%= f.input :booking_start, html5: true %>
-      <%= f.input :booking_end, html5: true %>
+      <%= f.input :booking_start, html5: true, input_html: {class: "formadjust"} %>
+      <%= f.input :booking_end, html5: true, input_html: {class: "formadjust"} %>
     </div>
     <div class="form-actions">
       <% if user_signed_in? %>
@@ -145,16 +151,7 @@
   <% end %>
 </div>
 <% end %>
-<div class="container">
-  <div id="map" class="map-show mt-5"
-     data-markers="<%= @marker.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-</div>
-</div>
-
 <br>
-
 <br>
 <div class="d-flex justify-content-center">
     <%= link_to 'Back to overview', offices_path, class: 'btn btn-secondary btn-lg btn-block'%>
@@ -162,4 +159,4 @@
 
 <% if policy(@office).edit? %>
     <%= link_to "✏️ Update my office", edit_office_path(@office) %>
-  <% end %>
+<% end %>

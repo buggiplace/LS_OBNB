@@ -12,9 +12,8 @@
    <% end %>
 </div> -->
 
-<div class="container">
-  <div>
-  <%= form_tag offices_path, method: :get do %>
+<div class="container d-flex justify-content-center search-to-container">
+  <%= form_tag offices_path, {method: :get, class: "search_form2"} do %>
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
@@ -23,9 +22,9 @@
   <%= submit_tag "Search", class: "btn btn-obnb-main" %>
 <% end %>
 </div>
-</div>
+
 <div class="content">
-<div class="container cards mt-5">
+<div class="container cards">
   <% @offices.each do |off| %>
   <%= link_to office_path(off) do%>
   <div class="card-trip">
@@ -36,8 +35,8 @@
           <% end %>
   <div class="card-trip-infos">
     <div>
-      <h2><%= off.office_name %></h2>
-      <p><%= off.address %></p>
+      <h2 class="card-no-deco"><%= off.office_name %></h2>
+      <p class="card-no-deco"><%= off.address %></p>
     </div>
     <h2 class="card-trip-pricing"><%= off.rate_per_day %>€/ Day</h2>
     <img src="https://i.pravatar.cc/101" class="card-trip-user avatar-bordered" />

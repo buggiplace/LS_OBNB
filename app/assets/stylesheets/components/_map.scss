@@ -29,7 +29,7 @@
   width: 100%;
   align-self: flex-start;
   height: 100vh;
-   position: sticky;
+  position: sticky !important;
   top: 0;
   border-style: solid;
   border-color: rgba(225, 25, 95, 0.2);

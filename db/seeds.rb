@@ -6,7 +6,7 @@ Booking.destroy_all
 Office.destroy_all
 User.destroy_all
 
-puts "Adding 20 users"
+puts "Adding users"
 
 20.times do
   User.create!(
@@ -17,9 +17,9 @@ puts "Adding 20 users"
   )
 end
 
-puts "User Seed done - 20 added"
+puts "User Seed done - #{User.count} added"
 
-puts "Adding 50 offices"
+puts "Adding offices"
 
 require 'csv'
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
@@ -61,20 +61,20 @@ filepath = Rails.root.join('db', 'address_seed4.csv')
 
   end
 
-puts "Office Seed done - #{Office.count}added"
+puts "Office Seed done - #{Office.count} added"
 
-puts "Adding 150 bookings"
+puts "Adding bookings"
 
-150.times do
+200.times do
   Booking.create!(
     user_id: User.all.sample.id,
     office_id: Office.all.sample.id,
-    booking_start: Date.today,
-    booking_end: Date.today + 5
+    booking_start: Date.today + rand(1..100),
+    booking_end: Date.today + 100 + rand(1..300)
   )
 end
 
-puts "Booking Seed done - 150 bookings created"
+puts "Booking Seed done - #{Booking.count} bookings created"
 
 
 

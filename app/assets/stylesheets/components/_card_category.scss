@@ -24,3 +24,17 @@
   transition: 500ms;
   color: #E1195F;
 }
+
+.card-category:hover a {
+  transform: scale(1.02);
+  filter: saturate(120%);
+  border-radius: 10px;
+  border-color: 3px black;
+  transition: 500ms;
+  color: #E1195F;
+  text-decoration: none;
+}
+
+.card-category a{
+  color: white;
+}

@@ -3,8 +3,11 @@ class OfficePolicy < ApplicationPolicy
     def resolve
       scope.all
     end
-
   end
+
+  # def corporate_index?
+  #   return true
+  # end
 
   def show?
     return true

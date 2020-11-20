@@ -19,11 +19,32 @@
   height: 25vh;
 
 }
+
+// .card-product-host-view {
+//   width: 50%;
+//   height: 20vh;
+
+// }
+
+
 .card-product-infos-myobnb {
    background: white!important;
    font-weight: lighter;
    padding: 16px;
-   width: 25vw;
+   width: 18vw;
+   height: 40vh;
+}
+
+.card-product-infos-myobnb p {
+   line-height: 75%;
+   padding-left: 20px;
+}
+
+.card-product-infos-myobnb h2 {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+
 }
 
 .card-product img {

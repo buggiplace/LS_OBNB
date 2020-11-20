@@ -1,5 +1,6 @@
 class OfficesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[index show]
+  skip_before_action :authenticate_user!, only: %i[index show corporate_index]
+  skip_after_action :verify_authorized, only: :corporate_index
 
   before_action :find, only: %i[show edit update destroy]
 
@@ -12,6 +13,17 @@ class OfficesController < ApplicationController
       @offices = Office.all
     end
     @markers = @offices.geocoded.map do |office|
+      {
+        lat: office.latitude,
+        lng: office.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { office: office })
+      }
+    end
+  end
+
+  def corporate_index
+    @corporate_offices = Office.where(cat_corporate: true)
+    @markers = @corporate_offices.geocoded.map do |office|
       {
         lat: office.latitude,
         lng: office.longitude,

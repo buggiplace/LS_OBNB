@@ -1,5 +1,5 @@
 .card-trip {
-  overflow: hidden;
+  // overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -20,6 +20,7 @@
   border-radius: 10px;
   border-color: 3px black;
   transition: 500ms;
+  text-decoration: none !important;
 }
 
 .card-trip > img {
@@ -41,7 +42,7 @@
 }
 
 .card-trip-infos a {
-  // text-decoration: none !important;
+  text-decoration: none !important;
   display: inline-block;
 }
 

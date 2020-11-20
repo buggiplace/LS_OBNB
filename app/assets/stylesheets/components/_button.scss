@@ -12,7 +12,11 @@
 
 .btn-obnb-main:hover {
   opacity: 1;
+  color: rgba(225, 25, 95, 1.0);
+  border: 1px solid rgba(225, 25, 95, 1.0);
+
 }
+
 
 .btn-obnb-main-lg {
   color: #4A4A4A;
@@ -34,7 +38,7 @@
 }
 
 .btn-obnb-secondary {
-  color: #4A4A4A;
+  color: black;
   // border: 1px solid #4A4A4A;
   background-color: #E1195F;
   padding: 8px 24px;

@@ -17,16 +17,17 @@
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Show all offices", offices_path, class: "nav-link" %>
+          <%= link_to "Book an office", offices_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to 'Become a host', new_office_path, class: 'nav-link'%>
         </li>
         <li class="nav-item">
           <%= link_to "My OBNB", myobnb_path, class: "nav-link" %>
         </li>
         <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <%= image_tag "avatar.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Home", root_path, class: "dropdown-item" %>
-            <%= link_to "Find offices", offices_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>

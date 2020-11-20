@@ -1,11 +1,15 @@
 .card-product {
   overflow: hidden;
-  height: 120px;
+  height: 100%;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  width: 75%;
+  width: 100%;
+  border-style: solid;
+  border-color: rgba(225, 25, 95, 0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
 }
 
 .card-product-myobnb {
@@ -33,13 +37,13 @@
 }
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
   margin: 0;
 }
 
 .card-product p {
-  font-size: 12px;
+  font-size: 17px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
@@ -50,3 +54,12 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+.card-product-infos h2 {
+  color: rgba(225, 25, 95, 1.0);
+}
+
+.card-product-infos {
+  width: 50%;
+}
+
